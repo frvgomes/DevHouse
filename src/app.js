@@ -7,13 +7,10 @@ class App {
   constructor() {
     this.server = express();
 
-    mongoose.connect(
-      'mongodb+srv://devhouse:devhouse@cluster0.1kicunl.mongodb.net/',
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    );
+    mongoose.connect('env.DATA_STRING', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
     this.middlewares();
     this.routes();
